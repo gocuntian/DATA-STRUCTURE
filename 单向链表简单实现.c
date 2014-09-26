@@ -21,6 +21,7 @@ node_type *get_new_node(int value) {
     node_type *new_node = (node_type *) malloc(sizeof(node_type));
     new_node->value = value;
     new_node->next = NULL;
+    return new_node;
 }
 
 /**
@@ -31,9 +32,10 @@ list_type *get_new_list() {
     list_type *new_list = (list_type *) malloc(sizeof(list_type));
     new_list->head = NULL;
     new_list->node_counter = 0;
+    return new_list;
 }
 
-void add_new_node(list_type *list, int value) {
+void insert_node(list_type *list, int value) {
     node_type *curr_node = NULL;
     for (curr_node = list->head; curr_node != NULL && curr_node->next != NULL; curr_node = curr_node->next) {
         ;
@@ -84,7 +86,7 @@ int main() {
             delete_node(list, value);
         } else if (cmd == 1) {
             scanf("%d", &value);
-            add_new_node(list, value);
+            insert_node(list, value);
         } else {
             printf("please enter \"-1\" for delete and \"1\" to insert node int the list.\n");
         }
