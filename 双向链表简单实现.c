@@ -19,6 +19,7 @@ node_type *get_new_node(int value) {
     new_node->value = value;
     new_node->next = NULL;
     new_node->prev = NULL;
+    return new_node;
 }
 
 list_type *get_new_list() {
@@ -26,6 +27,7 @@ list_type *get_new_list() {
     new_list->head = NULL;
     new_list->tail = NULL;
     new_list->node_counter = 0;
+    return new_list;
 }
 
 void insert_node(list_type *list, int value) {
